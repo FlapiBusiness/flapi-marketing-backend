@@ -5,13 +5,13 @@ export default class extends BaseSchema {
 
   async up() {
     this.schema.alterTable(this.tableName, (table) => {
-      table.enum('role', ['user', 'admin']).defaultTo('user') 
+      table.enum('role', ['user', 'admin']).defaultTo('user')
     })
   }
 
   async down() {
     this.schema.alterTable(this.tableName, (table) => {
-      table.dropColumn('role') 
+      table.dropColumn('role')
     })
   }
 }
