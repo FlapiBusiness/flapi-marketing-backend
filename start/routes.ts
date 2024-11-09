@@ -14,3 +14,9 @@ router.get('/', async () => {
     hello: 'world',
   }
 })
+
+router.get('/Login', async () => {
+  return {
+    hello: 'login',
+  }
+})
