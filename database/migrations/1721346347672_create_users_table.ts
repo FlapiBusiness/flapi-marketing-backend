@@ -11,6 +11,9 @@ export default class extends BaseSchema {
       table.string('password').notNullable()
       table.timestamp('created_at').notNullable()
       table.timestamp('updated_at').nullable()
+
+      table.integer('role_id').unsigned().nullable()
+      table.foreign('role_id').references('id').inTable('roles').onDelete('SET NULL')
     })
   }
 
