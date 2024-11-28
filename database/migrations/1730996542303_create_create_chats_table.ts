@@ -13,7 +13,6 @@ export default class CreateChatsTable extends BaseSchema {
       table.timestamp('updated_at').nullable()
 
       table.foreign('user_id').references('id').inTable('users').onDelete('SET NULL')
-      table.foreign('admin_id').references('id').inTable('users').onDelete('SET NULL')
     })
   }
 
