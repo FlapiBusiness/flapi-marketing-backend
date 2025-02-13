@@ -36,9 +36,6 @@ const mainConfig = {
   },
   rules: {
     /**
-     * Désactivation des règles spécifiques pour les tests
-     */
-    /**
      * ESLINT PLUGIN : eslint-plugin-prettier
      */
     // Active les règles de formatage de Prettier comme des règles ESLint.
@@ -161,6 +158,7 @@ const mainConfig = {
     },
   },
 }
+
 /**
  * @type {import("eslint").Linter.Config}
  *
