@@ -22,6 +22,7 @@ const mainConfig = {
     'app/middleware/container_bindings_middleware.ts',
     'app/middleware/force_json_response_middleware.ts',
     'tests/bootstrap.ts',
+    'tests/functional/auth.spec.ts',
     'dist/**',
     'build/**',
     'node_modules/**',
@@ -37,14 +38,6 @@ const mainConfig = {
     /**
      * Désactivation des règles spécifiques pour les tests
      */
-        overrides: [
-          {
-            files: ['tests/**/*.ts'], // Cible uniquement les fichiers de test
-            rules: {
-              '@typescript-eslint/typedef': 'off', // Désactive l'obligation d'ajouter des types
-            },
-          },
-        ],
     /**
      * ESLINT PLUGIN : eslint-plugin-prettier
      */
@@ -168,7 +161,6 @@ const mainConfig = {
     },
   },
 }
-module.exports = mainConfig;
 /**
  * @type {import("eslint").Linter.Config}
  *
