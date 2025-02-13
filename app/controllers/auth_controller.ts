@@ -8,15 +8,6 @@ import type { AccessToken } from '@adonisjs/auth/access_tokens'
  */
 export default class AuthController {
   /**
-   * Affiche la liste de tous les utilisateurs.
-   * @param {HttpContext} context - Le contexte de la requête HTTP
-   * @returns {Promise<void>} Répond avec la liste des utilisateurs en JSON
-   */
-  public async index({ response }: HttpContext): Promise<void> {
-    const users: User[] = await User.all()
-    return response.json(users)
-  }
-  /**
    * Gère la connexion de l'utilisateur.
    * @param {HttpContext} context - Le contexte de la requête HTTP
    * @returns {Promise<void>} Répond avec le token d'accès et les informations de l'utilisateur

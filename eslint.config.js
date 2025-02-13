@@ -35,6 +35,17 @@ const mainConfig = {
   },
   rules: {
     /**
+     * Désactivation des règles spécifiques pour les tests
+     */
+        overrides: [
+          {
+            files: ['tests/**/*.ts'], // Cible uniquement les fichiers de test
+            rules: {
+              '@typescript-eslint/typedef': 'off', // Désactive l'obligation d'ajouter des types
+            },
+          },
+        ],
+    /**
      * ESLINT PLUGIN : eslint-plugin-prettier
      */
     // Active les règles de formatage de Prettier comme des règles ESLint.
@@ -157,7 +168,7 @@ const mainConfig = {
     },
   },
 }
-
+module.exports = mainConfig;
 /**
  * @type {import("eslint").Linter.Config}
  *
