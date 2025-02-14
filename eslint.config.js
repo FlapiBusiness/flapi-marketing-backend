@@ -22,7 +22,6 @@ const mainConfig = {
     'app/middleware/container_bindings_middleware.ts',
     'app/middleware/force_json_response_middleware.ts',
     'tests/bootstrap.ts',
-    'tests/functional/auth.spec.ts',
     'dist/**',
     'build/**',
     'node_modules/**',
