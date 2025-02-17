@@ -57,7 +57,7 @@
     "npm-check-updates": "^17.1.10",
     "pino-pretty": "^11.3.0",
     "prettier": "^3.3.3",
-    "ts-node-maintained": "^10.9.4",
+    "ts-node-maintained": "^10.9.5",
     "typescript": "~5.5.0"
   },
   "hotHook": {
