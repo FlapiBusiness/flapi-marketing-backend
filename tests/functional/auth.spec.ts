@@ -63,7 +63,7 @@ test.group('Auth', (group: Group): void => {
     response.assertStatus(201)
     assert.equal(response.body().email, 'newuser@example.com')
 
-    // TODO: Checker si l'utilisateur est bien insérer en base de donnée avec les bonne valeurs
+    // TODO: Checker si l'utilisateur est bien insérée en base de donnée avec les bonne valeurs
     const userInDb: User | null = await User.findBy('email', 'newuser@example.com')
 
     // Vérifier que l’utilisateur existe
