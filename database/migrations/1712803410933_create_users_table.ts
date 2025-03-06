@@ -8,15 +8,14 @@ export default class extends BaseSchema {
 
     if (!tableExists) {
       this.schema.createTable(this.tableName, (table) => {
-        table.increments('id').unsigned().notNullable().primary()
+        table.increments('id').notNullable().primary().unique()
         table.string('full_name').nullable()
         table.string('email', 254).notNullable().unique()
         table.string('password').notNullable()
         table.timestamp('created_at').notNullable().defaultTo(this.now())
         table.timestamp('updated_at').nullable()
 
-        table.integer('role_id').unsigned().nullable()
-        table.foreign('role_id').references('id').inTable('roles').onDelete('SET NULL')
+        table.integer('role_id').nullable().references('id').inTable('roles').onDelete('SET NULL')
       })
     }
   }

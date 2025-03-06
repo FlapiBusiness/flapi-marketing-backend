@@ -5,9 +5,9 @@ export default class extends BaseSchema {
 
   async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id').primary()
-      table.integer('user_id').unsigned().references('id').inTable('users').onDelete('CASCADE')
-      table.integer('subscription_id').unsigned().references('id').inTable('subscriptions').onDelete('CASCADE')
+      table.increments('id').notNullable().primary().unique()
+      table.integer('user_id').notNullable().references('id').inTable('users').onDelete('CASCADE')
+      table.integer('subscription_id').notNullable().references('id').inTable('subscriptions').onDelete('CASCADE')
       table.string('payment_method')
       table.decimal('amount', 12, 2).notNullable()
       table.timestamp('payment_date').notNullable()

@@ -5,14 +5,12 @@ export default class CreateChatsTable extends BaseSchema {
 
   async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id').primary()
-      table.integer('user_id').unsigned().nullable()
-      table.integer('admin_id').unsigned().nullable()
+      table.increments('id').notNullable().primary().unique()
+      table.integer('user_id').nullable().references('id').inTable('users').onDelete('SET NULL')
+      table.integer('admin_id').nullable()
       table.timestamp('started_at').notNullable()
       table.enum('status', ['ouverte', 'fermée']).defaultTo('ouverte')
       table.timestamp('updated_at').nullable()
-
-      table.foreign('user_id').references('id').inTable('users').onDelete('SET NULL')
     })
   }
 
